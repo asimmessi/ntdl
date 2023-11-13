@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const apiEP = "http://localhost:8000/api/v1/task";
+const apiEP = process.env.NODE_ENV !=='production'
+?"/api/v1/task":
+"http://localhost:8000/api/v1/task" ;
 
 export const postTask = async (obj) => {
   try {
@@ -8,6 +10,10 @@ export const postTask = async (obj) => {
     return data;
   } catch (error) {
     console.log(error);
+    return {
+      status: "error",
+      message: error.message,
+    }
   }
 };
 

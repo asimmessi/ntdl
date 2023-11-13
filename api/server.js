@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 const app = express();
 console.log(app.listen);
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 import taskRouter from "./router.js";
 import { connectDB } from "./src/config/dbConfig.js";
 import cors from "cors";
