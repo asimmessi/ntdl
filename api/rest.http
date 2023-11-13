@@ -1,0 +1,13 @@
+# url = http://localhost:8000/api/v1/task/
+
+### get task
+GET http://localhost:8000/api/v1/task/
+
+### post task
+POST http://localhost:8000/api/v1/task/
+Content-Type: application/json
+
+{
+    "task": "watching TV",
+    "hr": 33
+}
